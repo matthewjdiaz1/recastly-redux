@@ -8,17 +8,11 @@ var handleVideoSearch = (q) => {
   // console.log(q)
   //TODO:  Write an asynchronous action to handle a video search!
   // return anon func that calls searchYoutube with q passed in 
-  return () => { searchYouTube({key: YOUTUBE_API_KEY, query: q, max: 5}, (items) => {
-    console.log('items: ', items);
+  return (dispatch) => { searchYouTube({key: YOUTUBE_API_KEY, query: q, max: 5}, (items) => {
+    console.log('items: ', dispatch(items));
     // changeVideo(items.video);
     // changeVideoList();
   });}
-  // searchYouTube({key: YOUTUBE_API_KEY, query: q, max: 5}, (items) => {
-  //   console.log(items);
-  //   // changeVideo(items.video);
-  //   // changeVideoList();
-  // });
-
 };
 
 export default handleVideoSearch;
