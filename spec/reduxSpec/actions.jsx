@@ -65,7 +65,6 @@ describe('Action dispatchers', function() {
       expect(handleVideoSearch.length).to.equal(1);
     });
     it('should make a call to the youtube API', function(done) {
-      console.log('test');
       $(document).ajaxSuccess(function(event, request, options) {
         expect(apiCall.count).to.equal(1);
         done();
