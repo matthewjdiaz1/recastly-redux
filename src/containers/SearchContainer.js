@@ -5,9 +5,10 @@ import handleSearchChange from '../actions/search.js';
 
 var mapDispatchToProps = (dispatch) => {
   return {
-    handleSearchInputChange: (url) => dispatch(handleSearchChange(url))
+    handleSearchInputChange: (q) => dispatch(handleSearchChange(q))
   };
 };
+
 var SearchContainer = connect(null, mapDispatchToProps)(Search);
 
 //TODO: define a SearchContainer component which will hook up your action
