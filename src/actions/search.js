@@ -5,8 +5,20 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 
 
 var handleVideoSearch = (q) => {
- 
+  // console.log(q)
   //TODO:  Write an asynchronous action to handle a video search!
+  // return anon func that calls searchYoutube with q passed in 
+  return () => { searchYouTube({key: YOUTUBE_API_KEY, query: q, max: 5}, (items) => {
+    console.log('items: ', items);
+    // changeVideo(items.video);
+    // changeVideoList();
+  });}
+  // searchYouTube({key: YOUTUBE_API_KEY, query: q, max: 5}, (items) => {
+  //   console.log(items);
+  //   // changeVideo(items.video);
+  //   // changeVideoList();
+  // });
+
 };
 
 export default handleVideoSearch;
